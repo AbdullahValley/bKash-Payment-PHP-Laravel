@@ -67,19 +67,20 @@ public function bkash()
         $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         curl_close($curl);
+    
+            //print_r($response); // For Getting all Response Data.
+    
+            $api_response = json_decode ($response, true);  // Getting Response from bKash API.
 
-        if ($err) {
-            echo $err;
-        }
+            $transaction_status = $api_response['transaction']['trxStatus']; // Transaction Status Codes
+    
+
+        if ($err || $transaction_status == "4001") {
+                echo 'Problem for Sending Response to bKash API ! Try Again after fews minutes.';
+            }
         else
         {
-            $api_response = json_decode ($response, true); // Getting Response from bKash API.
-            
-            //print_r($response); // For Getting all Response Data.
-
 // Assign Transaction Information
-
-            $transaction_status = $api_response['transaction']['trxStatus']; // Transaction Status Codes.
 
             $transaction_amount = $api_response['transaction']['amount']; // bKash Payment Amount.
 
