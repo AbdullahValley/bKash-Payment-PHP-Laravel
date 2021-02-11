@@ -1,6 +1,9 @@
 # bKash-Payment-PHP-Laravel
 bKash Payment Gateway for Raw PHP as well as Laravel Framework.
 
+# This is Old bKash API. If you want to use NEW bKash API then [click here for new bKash](https://github.com/AbdullahValley/bkash) ❤️
+![bkash-payment](https://user-images.githubusercontent.com/30390432/90474593-6fa17000-e147-11ea-85d8-4702c6fa6a1d.png)
+
 
 # Raw PHP
   You can use it for your raw php project.
